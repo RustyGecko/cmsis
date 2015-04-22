@@ -1,0 +1,18 @@
+[package]
+
+name = "cmsis"
+version = "0.1.0"
+authors = ["Håvard Wormdal Høiby <havardwhoiby@gmail.com>"]
+
+description = "Bindings for ARM CMSIS"
+repository = "https://github.com/RustyGecko/cmsis"
+
+keywords = ["cmsis", "bindings"]
+
+build = "build/cmsis.rs"
+
+[build-dependencies.gcc]
+git = "https://github.com/sondrele/gcc-rs.git"
+
+[target.thumbv7m-none-eabi.dependencies.core]
+git = "https://github.com/RustyGecko/rust-core.git"
