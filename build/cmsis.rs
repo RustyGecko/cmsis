@@ -6,8 +6,6 @@ use std::env;
 
 fn main() {
 
-    let out_dir = env::var("OUT_DIR").unwrap();
-
     println!("The ARM embedded toolchain must be available in the PATH");
     env::set_var("CC", "arm-none-eabi-gcc");
     env::set_var("AR", "arm-none-eabi-ar");
@@ -27,8 +25,5 @@ fn main() {
         .file("src/cmsis.c")
 
         .compile("libcmsis.a");
-
-    println!("cargo:rustc-link-search=native={}", out_dir);
-    println!("cargo:rustc-link-lib=static=cmsis");
 
 }
