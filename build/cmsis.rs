@@ -1,10 +1,14 @@
 extern crate gcc;
+extern crate submodules;
 
 use gcc::Config;
 
 use std::env;
 
 fn main() {
+    submodules::update()
+        .init()
+        .run();
 
     println!("The ARM embedded toolchain must be available in the PATH");
     env::set_var("CC", "arm-none-eabi-gcc");

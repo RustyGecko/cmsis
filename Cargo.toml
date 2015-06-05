@@ -11,6 +11,9 @@ keywords = ["cmsis", "bindings"]
 
 build = "build/cmsis.rs"
 
+[build-dependencies]
+submodules = "0.1"
+
 [build-dependencies.gcc]
 git = "https://github.com/sondrele/gcc-rs.git"
 
